@@ -1,0 +1,97 @@
+
+
+/* Table of contents
+––––––––––––––––––––––––––––––––––––––––––––––––––
+- Grid
+
+*/
+
+/* Page Styling
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+body {
+	 background-color: #f1f1f1;
+	 /*color: #fff;*/
+	 /*font-weight: 100;*/
+
+}
+
+/* Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.header {
+	text-align: center;
+	margin-top: 50px;
+}
+
+
+ .header h3 {
+       background: url(../images/calculator.png) no-repeat 50% 50%;
+    font-size: 14px;
+    letter-spacing: 6px;
+    padding-top: 80px;
+    height: 90px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Form styling
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.tool-inputs input {
+	background: rgba(255,255,255,.3);
+	font-size:20px;
+}
+
+
+/* Results
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.data-container {
+	width: 100%;
+	display: table;
+}
+
+.data-row {
+	display: table-row;
+}
+
+.data-column {
+	text-align: center;
+	display: table-cell;
+	width: 45%;
+	padding: 10px 0;
+
+}
+
+.data-column .desc, .data-column .val {
+	display: block;
+}
+
+.data-column .desc {
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	color: #ccc;
+	text-transform: uppercase;
+}
+
+.data-column .val {
+	font-size: 43px;
+	line-height: 45px;
+
+}
+
+
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 10px 0;
+	font-size: 10px;
+	color: #ccc;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>What is My Salary? Convert Hourly Wage to Yearly Salary</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body ng-app="salary">
+    <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container"  ng-controller="basicResults as Ctrl">
+        
+        <div class="row header">
+            <div class="twelve columns">
+                <h3>Hourly Wage Salary Calculator</h3>
+                <p>Use this calculator to determine your equivalent annual salary when given what you get paid per hour.</p>
+            </div>
+        </div>
+
+        <div class="row tool-inputs">
+            <div class="three columns">
+                <form>
+
+                    <label for="exampleEmailInput">Hourly Rate</label>
+                    <input class="u-full-width" fcsa-number="{prepend: '$', preventInvalidInput: true}" ng-model="hourlyRate" ng-keyup="Ctrl.updateFactory('hourlyRate', hourlyRate)"  type="text" placeholder="$/hr" id="exampleEmailInput">
+
+                    <label for="exampleEmailInput">Hours Per Week</label>
+                    <input class="u-full-width" fcsa-number="{preventInvalidInput: true}"ng-model="hoursPerWeek"  ng-keyup="Ctrl.updateFactory('hoursPerWeek', hoursPerWeek)" type="text" placeholder="e.g. 40" id="exampleEmailInput">
+
+
+                </form>
+            </div>
+            <div class="nine columns">
+
+                <div class="data-container">
+                    <div class="data-row">
+                        <div class="data-column">
+                            <span class="desc">Hourly Rate</span>
+                            <span class="val">$<span format="{{commaFormat?'comma':''}}" count-to="{{hourlyRate}}" value="0" duration=".6"></span>/hr</span>
+                        </div>
+    
+                        <div class="data-column">
+                            <span class="desc">Weekly Pay</span>
+                            <span class="val">$<span format="{{commaFormat?'comma':''}}" count-to="{{Ctrl.salaryData.getWeeklyPay()}}" value="0" duration=".6"></span></span>
+                        </div>
+                    </div>
+    
+                    
+                    <div class="data-row">
+                        <div class="data-column">
+                            <span class="desc">Monthly Pay</span>
+                            <span class="val">$<span format="{{commaFormat?'comma':''}}" count-to="{{Ctrl.salaryData.getMonthlyPay()}}" value="0" duration=".6">{{Ctrl.salaryData.getMonthlyPay() | currency }}</span></span>
+                        </div>
+    
+                        <div class="data-column">
+                            <span class="desc">Yearly Pay</span>
+                            <span class="val">$<span format="{{commaFormat?'comma':''}}" count-to="{{Ctrl.salaryData.getYearlyPay()}}" value="0" duration=".6">{{Ctrl.salaryData.getYearlyPay() | currency }}</span></span>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        Copyright 2015 Whatismysalary.com
+    </footer>
+
+
+
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        
+    <!-- plugins -->
+    <script src="js/lib/count-to.js"></script>
+    <script src="js/lib/fcsaNumber.js"></script>
+    
+    <!-- application -->
+    <script src="js/app.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/controller.js"></script>
+    <!-- End Document
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68053106-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+
+</html>
